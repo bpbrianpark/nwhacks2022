@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 
-Perfect Timing is an app that makes it simple for students to find optimal schedules for the courses they're taking. As students ourselves, we've had to face the struggles of researching courses and trying to create schedules that work. Perfect Timing automates this process. Simply enter your term, your courses, and your desired timeframe, and if one can be found, the best schedule will be given to you.
+Perfect Timing is an app that simplifies course regristraion by finding the most optimal schedule for you. As students ourselves, we know the pain of finding the courses we need and fitting them into the times we want. We either can't fit all our required courses in our schedule or have to take them in off-hours because we couldn't find a better combination manually. Perfect Timing automates this process. Simply tell us what courses you want and when, and we'll create a schedule for you so you can take the courses you need at the times you want to!
 
 ## THE TEAM
 Justin Lui ([LinkedIn](https://www.linkedin.com/in/jlui17), [GitHub](https://www.github.com/jlui17)) - Developer (Scheduling Algorithm)  
@@ -18,6 +18,8 @@ Brian Park ([LinkedIn](https://www.linkedin.com/in/brian-park-b794aa1b7/), [GitH
 1. Run in terminal `python scheduler.py`
 2. Follow the prompts in your terminal!
 3. Enjoy your auto-generated schedule :)
+
+## Scoring Explanation
 
 ## SCREENSHOTS
 Inputs  
