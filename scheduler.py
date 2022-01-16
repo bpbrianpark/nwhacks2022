@@ -300,7 +300,7 @@ def get_nth_schedule(n, target_start, target_end):
 def get_scored_schedules(target_start, target_end):
     return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)
 
-print_schedule_with_scores(get_nth_schedule(1, 1200, 1700))
+
 
 # print(int((int(1130 / 100) - 8) * 2 + ((1130 % 100) / 30)))
 

@@ -145,9 +145,18 @@ def getFinalDictList():
         tempList = parseWebElements(elements)
         parseText(tempList)
 
+def print_course_info(info):
+    for schedule in info:
+        for course in schedule:
+            print(course['course'].upper() + " " + course['section'], end = ", ")
+            for day in course['days']:
+                print(day, end = ", ")
+            print("Start: " + str(course['start'])[:-2] + ":" + str(course['start'])[-2:] + ", End: " + str(course['end'])[:-2] + ":" + str(course['end'])[-2:])
+        print()
+
 def getCourseInfo():
     getTargetCourses()
     getFinalDictList()
-    print(final)
+    print_course_info(final)
     driver.close()
     return final
