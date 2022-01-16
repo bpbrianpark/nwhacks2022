@@ -315,16 +315,13 @@ start_target = int(start_target_input[0:2])*100 + int(start_target_input[3:len(s
 end_target = int(end_target_input[0:2])*100 + int(end_target_input[3:len(end_target_input)])
 print("\n### CALCULATING POSSIBLE SCHEDULES AND SCORING THEM ###")
 scored_schedules = get_scored_schedules(course_info,start_target,end_target)
-for i in range(3):
+for i in range(min(5, len(scored_schedules))):
     print_schedule_with_scores(scored_schedules[i])
 print("... hiding rest\n")
 print("### RESULTS ### (Lower score is better)")
 print("Your BEST schedule within the specified timeframe of " + start_target_input + " to " + end_target_input + ":")
 print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
 print("Alternate schedules:")
-print("1.")
-print_schedule_with_scores(get_nth_schedule(2, course_info, start_target, end_target))
-print("2.")
-print_schedule_with_scores(get_nth_schedule(3, course_info, start_target, end_target))
-print("3.")
-print_schedule_with_scores(get_nth_schedule(4, course_info, start_target, end_target))
+for i in range(1, min(4, len(scored_schedules))):
+    print(str(i) + ".")
+    print_schedule_with_scores(get_nth_schedule(i+1, course_info, start_target, end_target))
