@@ -300,8 +300,4 @@ def get_nth_schedule(n, target_start, target_end):
 def get_scored_schedules(target_start, target_end):
     return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)
 
-
-
-# print(int((int(1130 / 100) - 8) * 2 + ((1130 % 100) / 30)))
-
-# print(has_overlap(({'name': 'comm 204', 'section': '101', 'days': ['Mon', 'Wed'], 'start': 1430, 'end': 1600}, {'name': 'comm 205', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 1430, 'end': 1530}, {'name': 'cpsc 221', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 1200, 'end': 1300}, {'name': 'cpsc 213', 'section': '101', 'days': ['Tue', 'Thu'], 'start': 1500, 'end': 1600}, {'name': 'comm 101', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 900, 'end': 1000})))
+print("")
