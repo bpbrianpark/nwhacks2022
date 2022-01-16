@@ -320,8 +320,11 @@ for i in range(min(5, len(scored_schedules))):
 print("... hiding rest\n")
 print("### RESULTS ### (Lower score is better)")
 print("Your BEST schedule within the specified timeframe of " + start_target_input + " to " + end_target_input + ":")
-print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
-print("Alternate schedules:")
-for i in range(1, min(4, len(scored_schedules))):
-    print(str(i) + ".")
-    print_schedule_with_scores(get_nth_schedule(i+1, course_info, start_target, end_target))
+try:
+    print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
+    print("Alternate schedules:")
+    for i in range(1, min(4, len(scored_schedules))):
+        print(str(i) + ".")
+        print_schedule_with_scores(get_nth_schedule(i+1, course_info, start_target, end_target))
+except:
+    print("No schedules!")
