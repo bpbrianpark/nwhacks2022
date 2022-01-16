@@ -317,7 +317,7 @@ print("\n### CALCULATING POSSIBLE SCHEDULES AND SCORING THEM ###")
 scored_schedules = get_scored_schedules(course_info,start_target,end_target)
 for schedule in scored_schedules:
     print_schedule_with_scores(schedule)
-print("### RESULTS ###")
+print("### RESULTS ### (Lower score is better)")
 print("Your BEST schedule within the specified timeframe of " + start_target_input + " to " + end_target_input + ":")
 print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
 print("Alternate schedules:")
