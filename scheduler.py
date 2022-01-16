@@ -315,8 +315,9 @@ start_target = int(start_target_input[0:2])*100 + int(start_target_input[3:len(s
 end_target = int(end_target_input[0:2])*100 + int(end_target_input[3:len(end_target_input)])
 print("\n### CALCULATING POSSIBLE SCHEDULES AND SCORING THEM ###")
 scored_schedules = get_scored_schedules(course_info,start_target,end_target)
-for schedule in scored_schedules:
-    print_schedule_with_scores(schedule)
+for i in range(3):
+    print_schedule_with_scores(scored_schedules[i])
+print("... hiding rest\n")
 print("### RESULTS ### (Lower score is better)")
 print("Your BEST schedule within the specified timeframe of " + start_target_input + " to " + end_target_input + ":")
 print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
