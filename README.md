@@ -27,7 +27,7 @@ Perfect Timing uses a scoring system to find the best schedule. Every hour of co
 
 ## SCREENSHOTS
 
-Mock-up
+Mock-up  
 ![home.png](images/home.png)
 ![generate.png](images/generate.png)
 ![schedule.png](images/schedule.png)
