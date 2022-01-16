@@ -1,18 +1,123 @@
+from course_info import getCourseInfo
 import itertools
+
+# courses_ex = [
+#     [
+#         {
+#             "name": "comm 204",
+#             "section":"101",
+#             "days":['Mon', 'Wed'],
+#             "start":1430,
+#             "end":1600
+#         },
+#         {
+#             "name": "comm 204",
+#             "section":"102",
+#             "days":['Mon', 'Wed'],
+#             "start":1600,
+#             "end":1730
+#         }
+#     ],
+#     [
+#         {
+#             "name": "comm 205",
+#             "section":"101",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1000,
+#             "end":1100
+#         },
+#         {
+#             "name": "comm 205",
+#             "section":"102",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1400,
+#             "end":1500
+#         },
+#         {
+#             "name": "comm 205",
+#             "section":"103",
+#             "days":['Tue', 'Thu'],
+#             "start":1200,
+#             "end":1330
+#         }
+#     ],
+#     [
+#         {
+#             "name": "cpsc 221",
+#             "section":"101",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1200,
+#             "end":1300
+#         },
+#         {
+#             "name": "cpsc 221",
+#             "section":"102",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":930,
+#             "end":1030
+#         },
+#     ],
+#     [
+#         {
+#             "name": "cpsc 213",
+#             "section":"101",
+#             "days":['Tue', 'Thu'],
+#             "start":1500,
+#             "end":1630
+#         },
+#         {
+#             "name": "cpsc 213",
+#             "section":"102",
+#             "days":['Mon', 'Wed'],
+#             "start":1630,
+#             "end":1800
+#         }
+#     ],
+#     [
+#         {
+#             "name": "comm 101",
+#             "section":"101",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1400,
+#             "end":1500
+#         },
+#         {
+#             "name": "comm 101",
+#             "section":"102",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1600,
+#             "end":1700
+#         },
+#         {
+#             "name": "comm 101",
+#             "section":"103",
+#             "days":['Mon', 'Wed', 'Fri'],
+#             "start":1130,
+#             "end":1230
+#         },
+#         {
+#             "name": "comm 101",
+#             "section":"104",
+#             "days":['Tue', 'Thu'],
+#             "start":1200,
+#             "end":1330
+#         }
+#     ]
+# ]
 
 courses_ex = [
     [
         {
             "course":"comm 204",
             "section":"101",
-            "days":"MW",
+            "days":["Mon","Wed"],
             "start":1430,
             "end":1600
         },
         {
             "course":"comm 204",
             "section":"102",
-            "days":"MW",
+            "days":["Mon","Wed"],
             "start":1600,
             "end":1730
         }
@@ -21,21 +126,21 @@ courses_ex = [
         {
             "course":"comm 205",
             "section":"101",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1000,
             "end":1100
         },
         {
             "course":"comm 205",
             "section":"102",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1400,
             "end":1500
         },
         {
             "course":"comm 205",
             "section":"103",
-            "days":"TuTh",
+            "days":["Tue","Thu"],
             "start":1200,
             "end":1330
         }
@@ -44,14 +149,14 @@ courses_ex = [
         {
             "course":"cpsc 221",
             "section":"101",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1200,
             "end":1300
         },
         {
             "course":"cpsc 221",
             "section":"102",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":930,
             "end":1030
         },
@@ -60,14 +165,14 @@ courses_ex = [
         {
             "course":"cpsc 213",
             "section":"101",
-            "days":"TuTh",
+            "days":["Tue","Thu"],
             "start":1500,
             "end":1630
         },
         {
             "course":"cpsc 213",
             "section":"102",
-            "days":"MW",
+            "days":["Mon","Wed"],
             "start":1630,
             "end":1800
         }
@@ -76,280 +181,127 @@ courses_ex = [
         {
             "course":"comm 101",
             "section":"101",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1400,
             "end":1500
         },
         {
             "course":"comm 101",
             "section":"102",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1600,
             "end":1700
         },
         {
             "course":"comm 101",
             "section":"103",
-            "days":"MWF",
+            "days":["Mon","Wed","Fri"],
             "start":1130,
             "end":1230
         },
         {
             "course":"comm 101",
             "section":"104",
-            "days":"TuTh",
+            "days":["Tue","Thu"],
             "start":1200,
             "end":1330
         }
     ]
 ]
 
-courses_ex_1 = {
-    "comm 204":[
-        {
-            "section":"101",
-            "days":"MW",
-            "start":1430,
-            "end":1600
-        },
-        {
-            "section":"102",
-            "days":"MW",
-            "start":1600,
-            "end":1730
-        }
-    ],
-    "comm 205":[
-        {
-            "section":"101",
-            "days":"MWF",
-            "start":1000,
-            "end":1100
-        },
-        {
-            "section":"102",
-            "days":"MWF",
-            "start":1400,
-            "end":1500
-        },
-        {
-            "section":"103",
-            "days":"TT",
-            "start":1200,
-            "end":1330
-        }
-    ],
-    "cpsc 221":[
-        {
-            "section":"101",
-            "days":"MWF",
-            "start":1200,
-            "end":1300
-        },
-        {
-            "section":"102",
-            "days":"MWF",
-            "start":930,
-            "end":1030
-        },
-    ],
-    "cpsc 213":[
-        {
-            "section":"101",
-            "days":"TT",
-            "start":1500,
-            "end":1630
-        },
-        {
-            "section":"102",
-            "days":"MW",
-            "start":1630,
-            "end":1800
-        }
-    ],
-    "comm 101":[
-        {
-            "section":"101",
-            "days":"MWF",
-            "start":1400,
-            "end":1500
-        },
-        {
-            "section":"102",
-            "days":"MWF",
-            "start":1600,
-            "end":1700
-        },
-        {
-            "section":"103",
-            "days":"MWF",
-            "start":1130,
-            "end":1230
-        },
-        {
-            "section":"104",
-            "days":"TT",
-            "start":1200,
-            "end":1330
-        }
-    ]
-}
+def has_overlap(combo):
+    times_mon = [False] * 26
+    times_tue = [False] * 26
+    times_wed = [False] * 26
+    times_thu = [False] * 26
+    times_fri = [False] * 26
 
-##############################
-
-courses_ex1 = {
-    "comm 204":[
-        {
-            "section":"101",
-            "days":"MW",
-            "start":1430,
-            "end":1600
-        },
-        {
-            "section":"102",
-            "days":"MW",
-            "start":1600,
-            "end":1730
-        }
-    ],
-    "comm 205":[
-        {
-            "section":"101",
-            "days":"MWF",
-            "start":1000,
-            "end":1100
-        },
-        {
-            "section":"102",
-            "days":"MWF",
-            "start":1400,
-            "end":1500
-        },
-        {
-            "section":"103",
-            "days":"TT",
-            "start":1200,
-            "end":1330
-        }
-    ]
-}
-
-# start_target = 1200
-# end_target = 1700
-
-# def dfs(courses, schedule, schedule_sofar = []):
-    
-
-# def get_all_schedules(courses): 
-#     schedule = []
-        
-#     dfs(courses, schedule)
-
-#     return schedule
-
-##################################
-
-courses_ex2 = [
-    [
-        {
-            "name": "comm 204",
-            "section":"101",
-            "days":"MW",
-            "start":1430,
-            "end":1600
-        },
-        {
-            "name": "comm 204",
-            "section":"102",
-            "days":"MW",
-            "start":1600,
-            "end":1730
-        }
-    ],
-    [
-        {
-            "name": "comm 205",
-            "section":"101",
-            "days":"MWF",
-            "start":1000,
-            "end":1100
-        },
-        {
-            "name": "comm 205",
-            "section":"102",
-            "days":"MWF",
-            "start":1400,
-            "end":1500
-        },
-        {
-            "name": "comm 205",
-            "section":"103",
-            "days":"TuTh",
-            "start":1200,
-            "end":1330
-        }
-    ]
-]
-
-def does_interfere(time, times): # (time = (start, end), times = [time1, time2, time3])
-    start = time[0]
-    end = time[1]
-    for t in times:
-        # t[0] is next start time
-        # t[1] is next end time
-        #       end inside                                          all inside                          start inside                                all outside (bigger)
-        if (start <= t[0] and end < t[1] and end > t[0]) or (start >= t[0] and end <= t[1]) or (start < t[1] and start > t[0] and end >= t[1]) or (start < t[0] and end > t[1]):
-            return True
+    for course in combo:
+        for day in course['days']:
+            start_index = int(((int(course["start"] / 100)) - 8) * 2 + (course["start"] % 100) / 30)
+            end_index = int(((int(course["end"] / 100)) - 8) * 2 + (course["end"] % 100) / 30)
+            for i in range(start_index, end_index):
+                if day == "Mon":
+                    if times_mon[i]:
+                        return True
+                    times_mon[i] = True
+                elif day == "Tue":
+                    if times_tue[i]:
+                        return True
+                    times_tue[i] = True
+                elif day == "Wed":
+                    if times_wed[i]:
+                        return True
+                    times_wed[i] = True
+                elif day == "Thu":
+                    if times_thu[i]:
+                        return True
+                    times_thu[i] = True
+                elif day == "Fri":
+                    if times_fri[i]:
+                        return True
+                    times_fri[i] = True
     return False
-
-def has_overlap(courses):
-    times = {
-        "M":[],
-        "Tu":[],
-        "W":[],
-        "Th":[],
-        "F":[]
-    }
-    for course in courses:
-        # for section in course:
-            # print(section)
-        time = (course['start'], course['end'])
-        days = course['days']
-        i = 0
-        while i < len(days):
-            if days[i] in "MWF":
-                day = days[i]
-                i += 1
-            else:
-                day = days[i:i+2]
-                i += 2
-            if does_interfere(time, times[day]):
-                return True
-            times[day].append(time)
-    return False
-    
 
 def get_possible_schedules(courses):
     combos = itertools.product(*courses)
     possible_schedules = []
     for combo in combos:
         if not has_overlap(combo):
-            possible_schedules.append(combo)
-    
-    i = 1
-    for schedule in possible_schedules:
-        for sections in schedule:
-            print(sections)
-        print(str(i) + "----------------")
-        i += 1
+            schedule = []
+            for course in combo:
+                schedule.append(course)
+            possible_schedules.append(schedule)
+    return possible_schedules
 
-get_possible_schedules(courses_ex)
+def print_schedule(schedule):
+    for course in schedule:
+        print(course['course'].upper() + " " + course['section'], end = ", ")
+        for day in course['days']:
+            print(day, end = ", ")
+        print("Start: " + str(course['start'])[:-2] + ":" + str(course['start'])[-2:] + ", End: " + str(course['end'])[:-2] + ":" + str(course['end'])[-2:])
+    print()
 
+def print_schedule_with_scores(schedule):
+    for i in range(len(schedule)-1):
+        print(schedule[i]['course'].upper() + " " + schedule[i]['section'], end = ", ")
+        for day in schedule[i]['days']:
+            print(day, end = ", ")
+        print("Start: " + str(schedule[i]['start'])[:-2] + ":" + str(schedule[i]['start'])[-2:] + ", End: " + str(schedule[i]['end'])[:-2] + ":" + str(schedule[i]['end'])[-2:])
+    print("Score - " + str(schedule[-1]))
+    print()
 
-def generate_schedule(courses):
-    # will generate a tuple of all combinations
-    new_list = itertools.product(*courses)
-    for elt in new_list:
-        for i in elt:
-            print(i)
-        print("----------------------------")
+def score_schedules(schedules, target_start, target_end):
+    def get_schedule_score(schedule):
+        score = 0
+        for course in schedule:
+            # if target_start > course['start'] : score += target_start - course['start'] 
+            # if target_end < course['end'] : score += course['end'] - target_end
+            if target_start > course['start']:
+                if (target_start - course['start']) % 100 == 30:
+                    score += target_start - course['start'] + 20
+                elif (target_start - course['start']) % 100 == 70:
+                    score += target_start - course['start'] - 20
+            if target_end < course['end']:
+                if (course['end'] - target_end % 100) == 30:
+                    score += course['end'] - target_end + 20
+                elif (course['end'] - target_end % 100) == 70:
+                    score += course['end'] - target_end - 20
+        return score
+
+    for schedule in schedules:
+        schedule.append(get_schedule_score(schedule))
+    schedules.sort(key=lambda x:x[-1])
+    return schedules
+
+def get_nth_schedule(n, target_start, target_end):
+    return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)[n-1]
+
+def get_scored_schedules(target_start, target_end):
+    return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)
+
+print_schedule_with_scores(get_nth_schedule(1, 1200, 1700))
+
+# print(int((int(1130 / 100) - 8) * 2 + ((1130 % 100) / 30)))
+
+# print(has_overlap(({'name': 'comm 204', 'section': '101', 'days': ['Mon', 'Wed'], 'start': 1430, 'end': 1600}, {'name': 'comm 205', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 1430, 'end': 1530}, {'name': 'cpsc 221', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 1200, 'end': 1300}, {'name': 'cpsc 213', 'section': '101', 'days': ['Tue', 'Thu'], 'start': 1500, 'end': 1600}, {'name': 'comm 101', 'section': '101', 'days': ['Mon', 'Wed', 'Fri'], 'start': 900, 'end': 1000})))

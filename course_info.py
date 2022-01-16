@@ -3,10 +3,6 @@ from numpy import number
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-options = Options()
-options.headless = True
-options.add_experimental_option("excludeSwitches", ["enable-logging"])
-
 # Setting up PATH for webdriver for selenium to use
 PATH = "C:\Program Files (x86)\chromedriver.exe" # version 97.0.4692.71
 driver = webdriver.Chrome(PATH)
@@ -154,3 +150,4 @@ def getCourseInfo():
     getFinalDictList()
     print(final)
     driver.close()
+    return final
