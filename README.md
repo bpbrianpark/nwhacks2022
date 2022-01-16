@@ -21,6 +21,8 @@ Brian Park ([LinkedIn](https://www.linkedin.com/in/brian-park-b794aa1b7/), [GitH
 
 ## Scoring Explanation
 
+Perfect Timing uses a scoring system to find the best schedule. Every hour of courses that is outside of your desired timeframe equals 100 points. So, if your desired timeframe is 12:00 to 17:00 and the schedule goes from 11:00 to 17:30, the score will be 250. The lower the score, the better the schedule!
+
 ## SCREENSHOTS
 Inputs  
 ![inputs.png](./images/inputs.png)  
