@@ -282,11 +282,15 @@ def score_schedules(schedules, target_start, target_end):
                     score += target_start - course['start'] + 20
                 elif (target_start - course['start']) % 100 == 70:
                     score += target_start - course['start'] - 20
+                else:
+                    score += target_start - course['start'] 
             if target_end < course['end']:
                 if (course['end'] - target_end % 100) == 30:
                     score += course['end'] - target_end + 20
                 elif (course['end'] - target_end % 100) == 70:
                     score += course['end'] - target_end - 20
+                else:
+                    score += course['end'] - target_end
         return score
 
     for schedule in schedules:
@@ -294,10 +298,32 @@ def score_schedules(schedules, target_start, target_end):
     schedules.sort(key=lambda x:x[-1])
     return schedules
 
-def get_nth_schedule(n, target_start, target_end):
-    return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)[n-1]
+def get_nth_schedule(n, course_info, target_start, target_end):
+    return score_schedules(get_possible_schedules(course_info),target_start,target_end)[n-1]
 
-def get_scored_schedules(target_start, target_end):
-    return score_schedules(get_possible_schedules(getCourseInfo()),target_start,target_end)
+def get_scored_schedules(course_info, target_start, target_end):
+    return score_schedules(get_possible_schedules(course_info),target_start,target_end)
 
-print("")
+### MAIN CODE ###
+
+print("\n### GETTING YOUR COURSE INFO ###")
+course_info = getCourseInfo()
+print("### COLLECTING INPUTS ###")
+start_target_input = input("What is your preferred start time? (Format - HH:MM. Ex: 1pm = 13:00)\nStart time = ")
+end_target_input = input("What is your preferred end time? (Format - HH:MM. Ex: 1pm = 13:00)\nEnd time = ")
+start_target = int(start_target_input[0:2])*100 + int(start_target_input[3:len(start_target_input)])
+end_target = int(end_target_input[0:2])*100 + int(end_target_input[3:len(end_target_input)])
+print("\n### CALCULATING POSSIBLE SCHEDULES AND SCORING THEM ###")
+scored_schedules = get_scored_schedules(course_info,start_target,end_target)
+for schedule in scored_schedules:
+    print_schedule_with_scores(schedule)
+print("### RESULTS ###")
+print("Your BEST schedule within the specified timeframe of " + start_target_input + " to " + end_target_input + ":")
+print_schedule_with_scores(get_nth_schedule(1, course_info, start_target, end_target))
+print("Alternate schedules:")
+print("1.")
+print_schedule_with_scores(get_nth_schedule(2, course_info, start_target, end_target))
+print("2.")
+print_schedule_with_scores(get_nth_schedule(3, course_info, start_target, end_target))
+print("3.")
+print_schedule_with_scores(get_nth_schedule(4, course_info, start_target, end_target))

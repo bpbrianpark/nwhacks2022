@@ -2,10 +2,11 @@ import time
 from numpy import number
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.chrome.options import Options
 # Setting up PATH for webdriver for selenium to use
 PATH = "C:\Program Files (x86)\chromedriver.exe" # version 97.0.4692.71
 driver = webdriver.Chrome(PATH)
+
 
 # Global Variables and Constants
 courseListTargets = []
@@ -146,6 +147,7 @@ def getFinalDictList():
         parseText(tempList)
 
 def print_course_info(info):
+    print("### FOUND COURSE INFO ONLINE ###")
     for schedule in info:
         for course in schedule:
             print(course['course'].upper() + " " + course['section'], end = ", ")
