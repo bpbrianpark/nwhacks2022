@@ -20,11 +20,11 @@ Brian Park ([LinkedIn](https://www.linkedin.com/in/brian-park-b794aa1b7/), [GitH
 3. Enjoy your auto-generated schedule :)
 
 ## SCREENSHOTS
-Inputs
-![inputs.png](./images/inputs.png)
+Inputs  
+![inputs.png](./images/inputs.png)  
 
-Calculations (Algorithm)
-![calculations.png](images/calculations.png)
+Calculations (Algorithm)  
+![calculations.png](images/calculations.png)  
 
-Results
-![results.png](images/results.png)
+Results  
+![results.png](images/results.png)  
