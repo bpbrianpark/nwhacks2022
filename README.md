@@ -8,7 +8,7 @@ Perfect Timing is an app that makes it simple for students to find optimal sched
 Justin Lui ([LinkedIn](https://www.linkedin.com/in/jlui17), [GitHub](https://www.github.com/jlui17)) - Developer (Scheduling Algorithm)  
 Eric Zhou ([LinkedIn](https://www.linkedin.com/in/jlui17), [GitHub](https://www.github.com/jlui17)) - Developer (Scheduling Algorithm)  
 Jason Liang ([LinkedIn](https://www.linkedin.com/in/jlui17), [GitHub](https://www.github.com/jsr000)) - Developer (Web Scraping/Selenium)  
-Brian Park ([LinkedIn](https://www.linkedin.com/in/jlui17), [GitHub](https://www.github.com/jlui17)) - Developer (UX/UI)  
+Brian Park ([LinkedIn](https://www.linkedin.com/in/brian-park-b794aa1b7/), [GitHub](https://github.com/MacTestRun)) - Developer (UX/UI)  
 
 ## INSTALLTION
 - Setup a virtual env (Optional)
