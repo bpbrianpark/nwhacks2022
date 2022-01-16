@@ -3,9 +3,12 @@ from numpy import number
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+
 # Setting up PATH for webdriver for selenium to use
-PATH = "C:\Program Files (x86)\chromedriver.exe" # version 97.0.4692.71
-driver = webdriver.Chrome(PATH)
+PATH = ".\chromedriver.exe" # version 97.0.4692.71
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(PATH, service_log_path='ignore.txt', options=options)
 
 
 # Global Variables and Constants
